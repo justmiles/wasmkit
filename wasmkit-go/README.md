@@ -1,13 +1,13 @@
 # wasmkit
 
-[![Go Reference](https://pkg.go.dev/badge/github.com/justmiles/wasmkit/wasmkit.svg)](https://pkg.go.dev/github.com/justmiles/wasmkit/wasmkit)
+[![Go Reference](https://pkg.go.dev/badge/github.com/justmiles/wasmkit/wasmkit-go.svg)](https://pkg.go.dev/github.com/justmiles/wasmkit/wasmkit-go)
 
 Go framework for building local-first browser applications with WASM and OPFS-backed SQLite. Provides a JSON bridge between JavaScript and Go handlers, schema migrations, and a CGO-free `golang-migrate` database driver — all designed to run inside a Web Worker.
 
 ## Install
 
 ```bash
-go get github.com/justmiles/wasmkit/wasmkit@latest
+go get github.com/justmiles/wasmkit/wasmkit-go@latest
 ```
 
 > **Note:** This module targets `GOOS=js GOARCH=wasm` and requires Go 1.26+.
@@ -23,7 +23,7 @@ import (
 	"embed"
 	"encoding/json"
 
-	"github.com/justmiles/wasmkit/wasmkit/bridge"
+	"github.com/justmiles/wasmkit/wasmkit-go/bridge"
 )
 
 //go:embed migrations/*.sql
@@ -78,7 +78,7 @@ import (
 	"database/sql"
 	"embed"
 
-	"github.com/justmiles/wasmkit/wasmkit/migrate"
+	"github.com/justmiles/wasmkit/wasmkit-go/migrate"
 )
 
 //go:embed migrations/*.sql
@@ -101,7 +101,7 @@ Only `WithInstance` is supported — the `*sql.DB` must be opened externally wit
 import (
 	"database/sql"
 
-	"github.com/justmiles/wasmkit/wasmkit/sqlitedriver"
+	"github.com/justmiles/wasmkit/wasmkit-go/sqlitedriver"
 )
 
 driver, err := sqlitedriver.WithInstance(db, &sqlitedriver.Config{

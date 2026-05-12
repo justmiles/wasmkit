@@ -11,7 +11,7 @@ import (
 	gomigrate "github.com/golang-migrate/migrate/v4"
 	"github.com/golang-migrate/migrate/v4/source/iofs"
 
-	"github.com/justmiles/wasmkit/wasmkit/sqlitedriver"
+	"github.com/justmiles/wasmkit/wasmkit-go/sqlitedriver"
 )
 
 // Run applies all pending up-migrations from migrationsFS. The dir argument

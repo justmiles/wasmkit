@@ -1,4 +1,4 @@
-module github.com/justmiles/wasmkit/wasmkit
+module github.com/justmiles/wasmkit/wasmkit-go
 
 go 1.26.0
 

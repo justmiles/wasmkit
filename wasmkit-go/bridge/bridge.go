@@ -14,7 +14,7 @@ import (
 	_ "github.com/danmestas/go-sqlite3-opfs"
 	_ "github.com/ncruces/go-sqlite3/driver"
 
-	wasmigrate "github.com/justmiles/wasmkit/wasmkit/migrate"
+	wasmigrate "github.com/justmiles/wasmkit/wasmkit-go/migrate"
 )
 
 // HandlerFunc is the signature for domain handlers. The payload is the raw
