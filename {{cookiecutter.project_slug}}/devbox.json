@@ -1,0 +1,22 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.16.0/.schema/devbox.schema.json",
+  "packages": [
+    "go@1.26",
+    "nodejs@20",
+    "golangci-lint@latest"
+  ],
+  "shell": {
+    "init_hook": [],
+    "scripts": {
+      "setup": "cd wasm && go mod tidy && cd ../typegen && go mod tidy && cd ../web && npm install",
+      "dev": "make dev",
+      "build": "make build",
+      "serve": "make build && cd web && npx vite preview",
+      "wasm": "make wasm",
+      "typegen": "make typegen",
+      "lint": "GOOS=js GOARCH=wasm golangci-lint run ./wasm/...; cd web && npx eslint .",
+      "package": "make build && tar -czf {{ cookiecutter.project_slug }}.tar.gz -C web/dist .",
+      "clean": "make clean"
+    }
+  }
+}

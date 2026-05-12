@@ -1,0 +1,8 @@
+{
+  "project_name": "My WASM App",
+  "project_slug": "{{ cookiecutter.project_name | lower | replace(' ', '-') | replace('_', '-') }}",
+  "go_module": "github.com/myuser/{{ cookiecutter.project_slug }}",
+  "db_name": "app",
+  "description": "A local-first SPA with Go/WASM, SQLite, and React",
+  "author": "Your Name"
+}

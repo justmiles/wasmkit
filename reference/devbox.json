@@ -1,0 +1,35 @@
+{
+    "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.16.0/.schema/devbox.schema.json",
+    "packages": [
+      "go@latest",
+      "nodejs@20",
+      "postgresql@16",
+      "go-migrate@latest",
+      "frp@latest",
+      "golangci-lint@latest",
+      "pgweb@latest"
+    ],
+    "env": {
+      "DATABASE_URL":    "postgres://postgres:postgres@localhost:5432/tcss_reports?sslmode=disable",
+      "API_PORT":        "8080",
+      "JIRA_BASE_URL":   "",
+      "JIRA_USER_EMAIL": "",
+      "JIRA_API_TOKEN":  "",
+      "JIRA_PROJECTS":   ""
+    },
+    "shell": {
+      "init_hook": [],
+      "scripts": {
+        "setup":        "cd backend && go mod tidy && cd ../frontend && npm install",
+        "dev:backend":  "cd backend && make run",
+        "dev:frontend": "cd frontend && npm run dev",
+        "dev":          "echo 'Run dev:backend and dev:frontend in separate terminals, or use: devbox run dev:backend & devbox run dev:frontend'",
+        "migrate:up":   "cd backend && make migrate-up",
+        "migrate:down": "cd backend && make migrate-down",
+        "test":         "cd backend && make test && cd ../frontend && npm test",
+        "pgweb":        "pgweb --listen=8083 --url $DATABASE_URL",
+        "lint":         "cd backend && golangci-lint run ./... && cd ../frontend && npx eslint ."
+      }
+    }
+  }
+  
