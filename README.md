@@ -17,7 +17,7 @@ This repo contains three independent artifacts:
 
 | Artifact | Path | Published as |
 |----------|------|--------------|
-| Go framework | `wasmkit/` | `github.com/justmiles/wasmkit` (Go module) |
+| Go framework | `wasmkit/` | `github.com/justmiles/wasmkit/wasmkit` (Go module) |
 | JS/TS framework | `wasmkit-js/` | `@justmiles/wasmkit` (npm package) |
 | Project template | `{{cookiecutter.project_slug}}/` | Cookiecutter template |
 
@@ -52,8 +52,8 @@ After generation:
 
 ```bash
 cd my-wasm-app
-make deps
-make dev
+devbox run setup
+devbox run dev
 ```
 
 ## Generated project layout

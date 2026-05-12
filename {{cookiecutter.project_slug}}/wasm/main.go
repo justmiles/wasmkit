@@ -6,7 +6,7 @@ import (
 	"encoding/json"
 	"time"
 
-	"github.com/justmiles/wasmkit/bridge"
+	"github.com/justmiles/wasmkit/wasmkit/bridge"
 
 	"{{ cookiecutter.go_module }}/wasm/apitypes"
 )
