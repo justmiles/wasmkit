@@ -1,0 +1,16 @@
+version: "2"
+
+linters:
+  enable:
+    - govet
+    - errcheck
+    - staticcheck
+    - unused
+    - revive
+
+  settings:
+    revive:
+      rules:
+        - name: file-length-limit
+          arguments:
+            max: 400
