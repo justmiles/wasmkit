@@ -34,7 +34,7 @@ export function useWasm(config: WasmConfig) {
   useEffect(() => {
     const coordinatorUrl =
       configRef.current.coordinatorUrl ??
-      new URL("wasmkit/workers/coordinator.shared-worker.js", import.meta.url);
+      new URL("./workers/coordinator.shared-worker.js", import.meta.url);
 
     const shared = new SharedWorker(coordinatorUrl, {
       type: "classic",
@@ -112,7 +112,7 @@ export function useWasm(config: WasmConfig) {
     function spawnWorker() {
       const wasmWorkerUrl =
         configRef.current.wasmWorkerUrl ??
-        new URL("wasmkit/workers/wasm-worker.js", import.meta.url);
+        new URL("./workers/wasm-worker.js", import.meta.url);
 
       const worker = new Worker(wasmWorkerUrl, { type: "classic" });
 

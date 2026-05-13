@@ -1,6 +1,6 @@
 import {
   useWasm
-} from "./chunk-S6MZCWZT.js";
+} from "./chunk-WQ3YKMCC.js";
 export {
   useWasm
 };

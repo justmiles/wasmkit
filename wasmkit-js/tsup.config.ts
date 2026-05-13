@@ -7,7 +7,7 @@ export default defineConfig({
   dts: true,
   sourcemap: true,
   clean: true,
-  external: ["react", "vite"],
+  external: ["react", "vite", "path", "fs", "module"],
   onSuccess: async () => {
     cpSync("src/workers", "dist/workers", { recursive: true });
   },
