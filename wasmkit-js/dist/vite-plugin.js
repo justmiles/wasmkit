@@ -1,6 +1,6 @@
 import {
   wasmBridge
-} from "./chunk-VGNEWTEB.js";
+} from "./chunk-6I4DOEBD.js";
 export {
   wasmBridge
 };

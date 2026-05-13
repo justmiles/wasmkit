@@ -3,7 +3,7 @@ import {
 } from "./chunk-WQ3YKMCC.js";
 import {
   wasmBridge
-} from "./chunk-VGNEWTEB.js";
+} from "./chunk-6I4DOEBD.js";
 export {
   useWasm,
   wasmBridge

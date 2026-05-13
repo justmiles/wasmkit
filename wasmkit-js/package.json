@@ -1,6 +1,6 @@
 {
   "name": "@justmiles/wasmkit",
-  "version": "0.1.3",
+  "version": "0.1.5",
   "description": "React hooks, workers, and Vite plugin for Go/WASM apps with OPFS-backed SQLite",
   "type": "module",
   "exports": {
@@ -16,7 +16,8 @@
       "types": "./dist/vite-plugin.d.ts",
       "import": "./dist/vite-plugin.js"
     },
-    "./workers/*": "./dist/workers/*"
+    "./workers/*": "./dist/workers/*",
+    "./package.json": "./package.json"
   },
   "files": [
     "dist"

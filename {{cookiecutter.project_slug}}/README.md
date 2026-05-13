@@ -29,13 +29,6 @@ devbox run dev
 
 The app runs on [http://localhost:5173](http://localhost:5173).
 
-Or without devbox:
-
-```bash
-make deps
-make dev
-```
-
 ## Development
 
 ### Common Commands

@@ -1,9 +1,9 @@
 import type { Plugin } from "vite";
 import path from "path";
-import { createRequire } from "module";
+import { fileURLToPath } from "url";
 import fs from "fs";
 
-const require = createRequire(import.meta.url);
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 /**
  * Vite plugin that fully integrates wasmkit into a Vite project:
@@ -16,10 +16,7 @@ const require = createRequire(import.meta.url);
  *    available at runtime without manual copy steps.
  */
 export function wasmBridge(): Plugin {
-  const pkgDir = path.dirname(
-    require.resolve("@justmiles/wasmkit/package.json")
-  );
-  const workerDir = path.join(pkgDir, "dist", "workers");
+  const workerDir = path.join(__dirname, "workers");
 
   const headers: Record<string, string> = {
     "Cross-Origin-Opener-Policy": "same-origin",
