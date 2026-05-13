@@ -3,5 +3,20 @@
   "packages": [
     "go@1.26",
     "nodejs@20"
-  ]
+  ],
+  "shell": {
+    "scripts": {
+      "sync-template-versions": [
+        "JS_VERSION=$(git tag --sort=-v:refname --list 'v*' | head -1 | sed 's/^v//')",
+        "GO_VERSION=$(git tag --sort=-v:refname --list 'wasmkit-go/*' | head -1 | sed 's|wasmkit-go/||')",
+        "echo \"JS: ${JS_VERSION}  Go: ${GO_VERSION}\"",
+        "TEMPLATE='{{cookiecutter.project_slug}}'",
+        "sed -i \"s|\\\"@justmiles/wasmkit\\\": \\\"\\^[0-9.]*\\\"|\\\"@justmiles/wasmkit\\\": \\\"^${JS_VERSION}\\\"|\" \"${TEMPLATE}/web/package.json\"",
+        "sed -i \"s|github.com/justmiles/wasmkit/wasmkit-go v[0-9.]*|github.com/justmiles/wasmkit/wasmkit-go ${GO_VERSION}|\" \"${TEMPLATE}/wasm/go.mod\"",
+        "echo 'Updated:'",
+        "grep '@justmiles/wasmkit' \"${TEMPLATE}/web/package.json\"",
+        "grep 'wasmkit-go' \"${TEMPLATE}/wasm/go.mod\""
+      ]
+    }
+  }
 }
